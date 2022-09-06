@@ -107,43 +107,43 @@ function listProducts(list) {
     let price = "R$ " + list[i].price;
     let category = list[i].category;
 
-    let tagImg = document.createElement("img");
-    tagImg.src = image;
-    tagImg.alt = imageDescription;
-    tagImg.title = title;
-    tagImg.classList.add("product-img");
+    let productImg = document.createElement("img");
+    productImg.src = image;
+    productImg.alt = imageDescription;
+    productImg.title = title;
+    productImg.classList.add("product-img");
 
-    let h1 = document.createElement("h1");
-    h1.classList.add("product-title");
-    h1.innerText = title;
+    let productTitle  = document.createElement("h1");
+    productTitle .classList.add("product-title");
+    productTitle .innerText = title;
 
-    let h5 = document.createElement("h5");
-    h5.classList.add("product-category");
-    h5.innerText = category;
+    let productCategory  = document.createElement("h5");
+    productCategory .classList.add("product-category");
+    productCategory .innerText = category;
 
-    let strong = document.createElement("strong");
-    strong.classList.add("product-price");
-    strong.innerText = price;
+    let productPrice = document.createElement("strong");
+    productPrice.classList.add("product-price");
+    productPrice.innerText = price;
 
-    let main = document.createElement("main");
-    main.classList.add("product-main");
+    let productMain = document.createElement("main");
+    productMain.classList.add("product-main");
 
-    main.append(h1, h5, strong);
+    productMain.append(productTitle , productCategory , productPrice);
 
-    let li = document.createElement("li");
-    li.classList.add("product");
+    let productCard = document.createElement("li");
+    productCard.classList.add("product");
 
-    li.append(tagImg, main);
+    productCard.append(productImg, productMain);
 
     if (category === "Frutas") {
       fruitsMain.appendChild(fruitsList);
-      fruitsList.appendChild(li);
+      fruitsList.appendChild(productCard );
     } else if (category === "Bebidas") {
       drinksMain.appendChild(dinksList);
-      dinksList.appendChild(li);
+      dinksList.appendChild(productCard );
     } else {
       hygieneMain.appendChild(hygieneList);
-      hygieneList.appendChild(li);
+      hygieneList.appendChild(productCard);
     }
   }
 }
